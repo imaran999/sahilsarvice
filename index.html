@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>साहिल - एक्सपर्ट एप्लायंस सर्विस</title>
+    <meta name="description" content="पटना में साहिल द्वारा AC, फ्रिज, वॉशिंग मशीन और कूलर की एक्सपर्ट रिपेयर और इंस्टॉलेशन सर्विस। तुरंत समाधान के लिए कॉल करें: 62019 63593">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- Internal CSS Starts Here --- */
+
+        :root {
+            --primary-color: #0061ff;
+            --primary-light: #6ea5ff;
+            --secondary-color: #1a253c;
+            --dark-grey: #2f374a;
+            --light-grey: #f0f4f8;
+            --white-color: #ffffff;
+            --text-color: #4a5568;
+            --heading-font: 'Teko', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+            --shadow: 0 10px 30px rgba(0, 97, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background-color: var(--light-grey);
+            color: var(--text-color);
+        }
+
+        /* --- Header & Navigation Bar --- */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 0 2rem;
+            background-image: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a5f 100%);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-shape {
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 400px;
+            height: 400px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(100px);
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary-light);
+        }
+
+        .hero-content h1 {
+            font-family: var(--heading-font);
+            font-size: 5rem;
+            font-weight: 700;
+            margin: 0.5rem 0 1.5rem;
+            line-height: 1.1;
+            letter-spacing: 1px;
+        }
+        
+        .hero-content h1 span {
+            color: var(--primary-light);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            background: var(--primary-light);
+            color: var(--secondary-color);
+        }
+        
+        .hero-cta i {
+            margin-right: 8px;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: var(--heading-font);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white-color);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-top-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- About Section --- */
+        #about {
+            background-color: var(--white-color);
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .about-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow);
+            border: 8px solid var(--white-color);
+        }
+        .about-content {
+            max-width: 600px;
+        }
+        .about-content h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-cta-group {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background-color: var(--secondary-color);
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white-color);
+        }
+        .btn-whatsapp:hover {
+             transform: translateY(-3px);
+            background-color: #128C7E;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--secondary-color);
+            color: var(--light-grey);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+        .footer-logo {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--white-color);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .footer p {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            color: #a0aec0;
+        }
+        .footer-copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark-grey);
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+
+        /* --- Responsive Design (Mobile First) --- */
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                justify-content: center;
+                gap: 3rem;
+                transition: right 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            }
+            .nav-menu.active {
+                right: 0;
+            }
+            .nav-link {
+                color: var(--white-color);
+                font-size: 1.2rem;
+            }
+            .nav-link:hover, .nav-link.active {
+                color: var(--primary-light);
+            }
+            .nav-link::after {
+                background-color: var(--primary-light);
+            }
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-content .subtitle {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 4rem 1rem;
+            }
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            .about-image {
+                width: 250px;
+                height: 250px;
+            }
+            .about-cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">साहिल शेख</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#hero" class="nav-link active">होम</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">सर्विसेज़</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">परिचय</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">संपर्क</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-shape"></div>
+            <div class="hero-content">
+                <p class="subtitle">एक्सपर्ट एप्लायंस सर्विस</p>
+                <h1>आपके घर पर <span>तुरंत</span> समाधान</h1>
+                <a href="tel:6201963593" class="hero-cta">
+                    <i class="fas fa-phone-alt"></i> कॉल करें: 62019 63593
+                </a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="section-title">
+                <h2>हमारी सर्विसेज़</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+                    <h3>AC रिपेयर & इंस्टॉलेशन</h3>
+                    <p>सभी तरह के स्प्लिट और विंडो AC की सर्विसिंग, गैस चार्जिंग और इंस्टॉलेशन।</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-temperature-low"></i></div>
+                    <h3>फ्रिज रिपेयर</h3>
+                    <p>कूलिंग, कंप्रेसर या गैस लीकेज जैसी समस्याओं का विश्वसनीय समाधान।</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-jug-detergent"></i></div>
+                    <h3>वॉशिंग मशीन रिपेयर</h3>
+                    <p>ऑटोमैटिक और सेमी-ऑटोमैटिक मशीनों की मोटर, ड्रम और पैनल की मरम्मत।</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-wind"></i></div>
+                    <h3>एयर कूलर रिपेयर</h3>
+                    <p>सभी प्रकार के कूलर की मोटर, पंप की मरम्मत और मेंटेनेंस।</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+             <div class="section-title">
+                <h2>मेरा परिचय</h2>
+            </div>
+            <div class="about-container">
+                <img src="sahil.jpeg" alt="साहिल, AC मैकेनिक" class="about-image">
+                <div class="about-content">
+                    <h3>मैं हूँ साहिल, आपका भरोसेमंद टेक्नीशियन</h3>
+                    <p>
+                        मुझे एप्लायंस रिपेयरिंग में वर्षों का अनुभव है और मेरा एकमात्र लक्ष्य है ग्राहकों को बेहतरीन और स्थायी समाधान देना। मैं क्वालिटी और समय पर सर्विस देने में विश्वास रखता हूँ, ताकि आप बिना किसी चिंता के अपने एप्लायंसेज का उपयोग कर सकें।
+                    </p>
+                    <div id="contact" class="about-cta-group">
+                        <a href="tel:6201963593" class="btn btn-primary">
+                            <i class="fas fa-phone-alt"></i> अभी कॉल करें
+                        </a>
+                        <a href="https://wa.me/916201963593?text=नमस्ते%20साहिल,%20मुझे%20आपकी%20सर्विस%20की%20जरूरत%20है।" target="_blank" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp करें
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#" class="footer-logo">साहिल</a>
+        <p>क्वालिटी सर्विस, उचित दाम। आपके घर पर तुरंत समाधान के लिए हमेशा तैयार।</p>
+        <div class="footer-copyright">
+            &copy; 2025 web dev <a style="text-decoration: none; color: #f0f4f8;" href="http://imran-portfolioo.netlify.app/">imran alam </a>. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        /* --- Internal JavaScript Starts Here --- */
+
+        // Mobile Menu Toggle
+        const navMenu = document.getElementById('nav-menu');
+        const navToggle = document.getElementById('nav-toggle');
+        const navClose = document.getElementById('nav-close'); // In case you want a close icon
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                // Change icon on toggle
+                if (navToggle.innerHTML.includes('fa-bars')) {
+                    navToggle.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        }
+        
+        // Close mobile menu when a link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function linkAction() {
+            navMenu.classList.remove('active');
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+        navLinks.forEach(n => n.addEventListener('click', linkAction));
+        
+        // Active link highlighting on scroll
+        const sections = document.querySelectorAll('section[id]');
+
+        function scrollActive() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 80; // Adjusted for fixed header
+                const sectionId = current.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active');
+                } else {
+                    document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', scrollActive);
+
+    </script>
+
+</body>
+</html>
